@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.main {
+  border-radius: 20px;
+  display: block;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  /* background-color: red; */
+  /* margin: 10px; */
+  /* padding: 10px 10px; */
 }
 
-.App-link {
-  color: #61dafb;
+/*Add the below code to style.css*/
+
+#top-header {
+  background-color: plum;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#logo {
+  font-size: 25px;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  gap: 10px;
+}
+#logo img {
+  height: 90px;
+  cursor: pointer;
+}
+
+h3 {
+  color: black;
+  font-size: 22px;
+  cursor: pointer;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Underline Animation */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: black;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Color Transition */
+nav ul li a:hover {
+  color: black;
+}
+
+/* Scale Effect */
+nav ul li a:hover {
+  transform: scale(1.1);
 }
