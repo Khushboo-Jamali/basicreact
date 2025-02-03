@@ -1,15 +1,20 @@
 import React from 'react'
 
-export default function Header() {
+export default function Header(props) {
+
+    console.log(props.name);
   return (
-    <header>
+   
+    
+    <header >
+
 
     <div id="top-header">
      
         <div id="logo">
             
             <img src="./logo192.png" />
-          <h3>  React Nav</h3>
+          <h3>{props.name}</h3>
         </div>
       
         <nav >

@@ -3,7 +3,8 @@ import "./App.css";
 import Text from "./Text";
 import Footer from "./Footer";
 import Header from "./Header";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 function App() {
   let name = "new react course";
@@ -18,9 +19,73 @@ function App() {
 
   return (
     <div className="root main">
-      <Header />
+      <Header name="React web"  />
 
-      <Container fluid>Hello Welcome to the React project</Container>
+      <Container
+        fluid
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          flexWrap: "wrap",
+          padding: "20px 10px",
+        }}
+      >
+        {/* <Row>
+          <Col className="col-12 bg-danger text-center py-4">
+            <h1>Hello</h1>
+          </Col>
+        </Row> */}
+        <Row>
+          <Col lg="3" md="6">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="./img5.jpeg" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col lg="3" md="6">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="./img5.jpeg" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col lg="3" md="6">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="./img5.jpeg" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col lg="3" md="6">
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="./img5.jpeg" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
       {/* <CardsSection></CardsSection> */}
       {/* <h1>{name}</h1> */}
 
@@ -41,9 +106,9 @@ function App() {
 
       <div>{20 + 30}</div> */}
       <div className="container">
-        <Card />
-        <Card />
-        <Card />
+        <CardPart />
+        <CardPart />
+        <CardPart />
       </div>
       <Uikit />
 
@@ -69,7 +134,7 @@ function App() {
 
 export default App;
 
-function Card() {
+function CardPart() {
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img className="card-img-top" src="./pic (2).jpg" alt="Card image cap" />
