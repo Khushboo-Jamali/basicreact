@@ -3,6 +3,7 @@ import "./App.css";
 import Text from "./Text";
 import Footer from "./Footer";
 import Header from "./Header";
+import { Container } from "react-bootstrap";
 
 function App() {
   let name = "new react course";
@@ -17,8 +18,9 @@ function App() {
 
   return (
     <div className="root main">
-      <Header></Header>
+      <Header />
 
+      <Container fluid>Hello Welcome to the React project</Container>
       {/* <CardsSection></CardsSection> */}
       {/* <h1>{name}</h1> */}
 
@@ -38,7 +40,14 @@ function App() {
       </p>
 
       <div>{20 + 30}</div> */}
-      <Text></Text>
+      <div className="container">
+        <Card />
+        <Card />
+        <Card />
+      </div>
+      <Uikit />
+
+      {/* <Text /> */}
       {/* {statusname ? (
         <h1
           style={{
@@ -53,9 +62,55 @@ function App() {
       ) : (
         <span>Not found</span>
       )} */}
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
+function Card() {
+  return (
+    <div className="card" style={{ width: "18rem" }}>
+      <img className="card-img-top" src="./pic (2).jpg" alt="Card image cap" />
+      <div className="card-body">
+        <h5 className="card-title">Card title</h5>
+        <p className="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" className="btn btn-dark">
+          Go somewhere
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function Uikit() {
+  return (
+    <div className="uk-container">
+      Uikit Animations
+      <div
+        class="uk-align-center uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match bg"
+        uk-grid
+      >
+        <div class="uk-animation-toggle card-bg" tabindex="0">
+          <div class="uk-card uk-card-primary uk-card-body uk-animation-fade">
+            <p class="uk-text-center">Fade</p>
+          </div>
+        </div>
+        <div class="uk-animation-toggle card-bg" tabindex="0">
+          <div class="uk-card uk-card-primary uk-card-body uk-animation-scale-up">
+            <p class="uk-text-center">Scale Up</p>
+          </div>
+        </div>
+        <div class="uk-animation-toggle card-bg" tabindex="0">
+          <div class="uk-card uk-card-primary uk-card-body uk-animation-scale-down">
+            <p class="uk-text-center">Scale Down</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
