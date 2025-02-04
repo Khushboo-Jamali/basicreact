@@ -16,10 +16,15 @@ function App() {
     email: "A@gmail.com",
     password: 123,
   };
-
+  let headerInfo = {
+    name: "React",
+    lastname: "web",
+  };
   return (
     <div className="root main">
-      <Header name="React web"  />
+      <Header headerInfo={headerInfo} cname="Hello">
+        <h1>Hello welcome to header section </h1>
+      </Header>
 
       <Container
         fluid
