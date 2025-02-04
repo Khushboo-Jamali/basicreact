@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 // import { Container } from "react-bootstrap";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { blog } from "./Data/blog";
 
 function App() {
   let name = "new react course";
@@ -42,7 +43,7 @@ function App() {
         </Row> */}
         <Row>
           <Col lg="3" md="6">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "18rem" }} className="cardItem">
               <Card.Img variant="top" src="./img5.jpeg" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -54,7 +55,7 @@ function App() {
             </Card>
           </Col>
           <Col lg="3" md="6">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "18rem" }} className="cardItem">
               <Card.Img variant="top" src="./img5.jpeg" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -66,7 +67,7 @@ function App() {
             </Card>
           </Col>
           <Col lg="3" md="6">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "18rem" }} className="cardItem">
               <Card.Img variant="top" src="./img5.jpeg" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -78,7 +79,7 @@ function App() {
             </Card>
           </Col>
           <Col lg="3" md="6">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "18rem" }} className="cardItem">
               <Card.Img variant="top" src="./img5.jpeg" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -117,6 +118,13 @@ function App() {
       </div>
       <Uikit />
 
+      <Container>
+        <Row>
+          {blog.map((v, i) => {
+            return <ProductItems key={i} pitem={v} />;
+          })}
+        </Row>
+      </Container>
       {/* <Text /> */}
       {/* {statusname ? (
         <h1
@@ -139,9 +147,25 @@ function App() {
 
 export default App;
 
+function ProductItems({ pitem }) {
+  // console.log(pitem.title);
+
+  return (
+    <Col>
+      <Card style={{ width: "18rem", marginTop: "10px" }}>
+        <Card.Body>
+          <Card.Title>{pitem.title}</Card.Title>
+          <Card.Text>{pitem.body}</Card.Text>
+          <Button className="btn btn-primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
+    </Col>
+  );
+}
+
 function CardPart() {
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div style={{ width: "18rem" }} className="cardItem">
       <img className="card-img-top" src="./pic (2).jpg" alt="Card image cap" />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
@@ -162,22 +186,22 @@ function Uikit() {
     <div className="uk-container">
       Uikit Animations
       <div
-        class="uk-align-center uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match bg"
+        className="uk-align-center uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match bg"
         uk-grid
       >
-        <div class="uk-animation-toggle card-bg" tabindex="0">
-          <div class="uk-card uk-card-primary uk-card-body uk-animation-fade">
-            <p class="uk-text-center">Fade</p>
+        <div className="uk-animation-toggle card-bg">
+          <div className="uk-card uk-card-primary uk-card-body uk-animation-fade">
+            <p className="uk-text-center">Fade</p>
           </div>
         </div>
-        <div class="uk-animation-toggle card-bg" tabindex="0">
-          <div class="uk-card uk-card-primary uk-card-body uk-animation-scale-up">
-            <p class="uk-text-center">Scale Up</p>
+        <div className="uk-animation-toggle card-bg">
+          <div className="uk-card uk-card-primary uk-card-body uk-animation-scale-up">
+            <p className="uk-text-center">Scale Up</p>
           </div>
         </div>
-        <div class="uk-animation-toggle card-bg" tabindex="0">
-          <div class="uk-card uk-card-primary uk-card-body uk-animation-scale-down">
-            <p class="uk-text-center">Scale Down</p>
+        <div className="uk-animation-toggle card-bg">
+          <div className="uk-card uk-card-primary uk-card-body uk-animation-scale-down">
+            <p className="uk-text-center">Scale Down</p>
           </div>
         </div>
       </div>

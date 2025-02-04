@@ -115,6 +115,11 @@ nav ul li a:hover {
   padding: 20px;
   align-items: center;
 }
+/* .cardConatiner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+} */
 .bg {
   background-color: plum;
   align-items: center;
@@ -147,11 +152,12 @@ nav ul li a:hover {
   height: 260px;
   /* border-radius: 20px; */
 }
-.card {
-  height: 400px;
+.cardItem {
+  height: 450px;
   border-radius: 20px;
   background-color: plum;
 }
+
 footer {
   margin-top: 50px;
 }
