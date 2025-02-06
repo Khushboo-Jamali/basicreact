@@ -6,6 +6,9 @@ import Header from "./Header";
 // import { Container } from "react-bootstrap";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { blog } from "./Data/blog";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faPhone, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   let name = "new react course";
@@ -173,9 +176,12 @@ function CardPart() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </p>
-        <a href="#" className="btn btn-dark">
+        {/* <a href="#" className="btn btn-dark">
           Go somewhere
-        </a>
+        </a> */}
+        <FontAwesomeIcon icon={faFacebook} className="text-danger" />
+        <FontAwesomeIcon icon={faPhone} className="text-danger" />
+        <FontAwesomeIcon icon={faSearch} className="text-danger" />
       </div>
     </div>
   );
